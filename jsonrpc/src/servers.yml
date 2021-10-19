@@ -12,8 +12,4 @@ langservers:
   ts:
     - typescript-language-server.cmd
     - --stdio
-  # javaServer:
-  #   - /home/ubuntu/java-language-server/dist/lang_server_linux.sh
-  #     #- ['-cp', 'fat-jar.jar','-Djavacs.port= + 3000','-Xverify:none','org.javacs.Main']
-  # java8Server:
-  #   - /home/ubuntu/java-language-server/dist/lang_server_linux.sh
+

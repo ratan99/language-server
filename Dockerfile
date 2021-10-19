@@ -21,7 +21,7 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN apt install python3 -y
 RUN apt install python3-pip -y
 
-RUN echo "hello6"
+RUN echo "hello7"
 RUN git clone https://github.com/ratan99/language-server.git
 RUN cd language-server/jsonrpc && npm install &&  npm run prepare
 
