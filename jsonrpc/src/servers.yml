@@ -3,9 +3,6 @@ langservers:
     - pyls
   python3Server:
     - pyls
-  go:
-    - /usr/local/bin/go
-    - langserver.go
   cppServer:
     - clangd
     - "--all-scopes-completion=true"

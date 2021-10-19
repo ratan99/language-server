@@ -21,7 +21,7 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN apt install python3 -y
 RUN apt install python3-pip -y
 
-RUN echo "hello1"
+RUN echo "hello2"
 RUN git clone https://github.com/ratan99/language-server.git
 RUN cd language-server/jsonrpc && npm install &&  npm run prepare
 
@@ -30,8 +30,11 @@ RUN pip3 install python-language-server
 
 RUN cd python-language-server && npm install
 
-# WORKDIR language-server
-CMD ["node", "language-server/jsonrpc/dist/server.js  --languageServers language-server/jsonrpc/src/servers.yml"]
+RUN cp /language-server/jsonrpc/src/servers.yml /language-server/jsonrpc/dist/servers.yml
+
+WORKDIR /language-server
+CMD ["node", "jsonrpc/dist/server.js --languageServers ./../servers.yml"]
+# CMD ["node", "jsonrpc/dist/server.js"]
 
 EXPOSE 3000
 
